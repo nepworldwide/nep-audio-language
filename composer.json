@@ -3,7 +3,7 @@
     "description": "For generating audio objects",
     "type": "library",
     "require": {
-        "php": "7.2",
+        "php": "^7.2",
         "ext-json": "*"
     },
     "require-dev": {
