@@ -1,5 +1,5 @@
 {
-    "name": "nep-audio-languagenepworldwide/nep-audio-language",
+    "name": "nepworldwide/nep-audio-language",
     "description": "For generating audio objects",
     "type": "library",
     "require": {
