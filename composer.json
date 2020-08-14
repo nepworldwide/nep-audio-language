@@ -1,0 +1,26 @@
+{
+    "name": "nep-audio-languagenepworldwide/nep-audio-language",
+    "description": "For generating audio objects",
+    "type": "library",
+    "require": {
+        "php": "7.2",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "php": "^7.2",
+        "ext-json": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sugarfixx",
+            "email": "ingar.torsrud@me.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "NepAudioLanguage": "src/"
+        }
+    }
+}
