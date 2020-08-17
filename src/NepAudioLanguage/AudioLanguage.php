@@ -23,6 +23,8 @@ class AudioLanguage
     {
         if ($code) {
             $this->createObject($code);
+        } else {
+            $this->createObject('und');
         }
     }
 
