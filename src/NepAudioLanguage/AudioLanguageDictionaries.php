@@ -90,6 +90,7 @@ class AudioLanguageDictionaries
         'do' => 'dom',
         'ec' => 'ecu',
         'eg' => 'egy',
+        'en' => 'eng',
         'sv' => 'swe',
         'gq' => 'gnq',
         'er' => 'eri',
