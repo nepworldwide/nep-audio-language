@@ -10,7 +10,7 @@ namespace NepAudioLanguage;
 
 use NepAudioLanguage\AudioLanguageDictionaries;
 
-class AudioLanguage
+class AudioLanguage implements JsonSerializable
 {
     public $name;
 
@@ -32,8 +32,8 @@ class AudioLanguage
     {
         $dictionary = new AudioLanguageDictionaries();
         $alpha2 = $dictionary->resolve($code);
-        $this->setIso639_1($alpha2);
-        $this->setIso639_3($dictionary->key_iso_639_1[$alpha2]);
+        $this->setIso_639_1($alpha2);
+        $this->setIso_639_3($dictionary->key_iso_639_1[$alpha2]);
         $this->setName($dictionary->nameFromKey[$alpha2]);
     }
 
@@ -47,24 +47,34 @@ class AudioLanguage
         return $this->name;
     }
 
-    public function setIso639_1($iso_1)
+    public function setIso_639_1($iso_1)
     {
-        $this->iso639_1 = $iso_1;
+        $this->iso_639_1 = $iso_1;
     }
 
-    public function getIso639_1()
+    public function getIso_639_1()
     {
-        return $this->iso639_1;
+        return $this->iso_639_1;
     }
 
-    public function setIso639_3($iso_3)
+    public function setIso_639_3($iso_3)
     {
-        $this->iso639_3 = $iso_3;
+        $this->iso_639_3 = $iso_3;
     }
 
-    public function getIso639_3()
+    public function getIso_639_3()
     {
-        return $this->iso639_3;
+        return $this->iso_639_3;
     }
 
+    public function jsonSerialize()
+    {
+        return [
+            'language' => [
+                'name' => $this->name,
+                'iso_639_1' => $this->iso_639_1,
+                'iso_639_3' => $this->iso_639_3,
+            ]
+        ];
+    }
 }
