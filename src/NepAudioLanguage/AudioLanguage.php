@@ -14,9 +14,9 @@ class AudioLanguage
 {
     public $name;
 
-    public $iso639_1;
+    public $iso_639_1;
 
-    public $iso639_3;
+    public $iso_639_3;
 
 
     public function __construct($code = null)
