@@ -231,7 +231,7 @@ class AudioLanguageDictionaries
         'za' => 'zaf',
         'gs' => 'sgs',
         'ss' => 'ssd',
-        'es' => 'esp',
+        'es' => 'spa',
         'lk' => 'lka',
         'sd' => 'sdn',
         'sr' => 'sur',
