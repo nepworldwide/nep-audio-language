@@ -650,7 +650,13 @@ class AudioLanguageDictionaries
         'zha' => 'za',
         'zul' => 'zu',
         'und' => 'ud',
-        'zxx' => 'zx'
+        'zxx' => 'zx',
+        // added  by uefa
+        'yue' => 'zh', // exitst for Kantonese in 639-3
+        'cmn' => 'zh', // Mandarin
+        'cnr' => 'mo', // Montenegrin
+        'rom' => 'ry', // romany Macrolanguage are we sure?
+        'gsw' => 'sz', // Alemannic, Alsatian, Swiss German
     ];
 
     public $nameFromKey = [
@@ -760,6 +766,7 @@ class AudioLanguageDictionaries
         'mi' => 'Maori',
         'mr' => 'Marathi',
         'mh' => 'Marshallese',
+        'mo' => 'Montenegrin',
         'mn' => 'Mongolian',
         'na' => 'Nauru',
         'nv' => 'Navajo',
@@ -788,6 +795,7 @@ class AudioLanguageDictionaries
         'rn' => 'Rundi',
         'ro' => 'Romanian',
         'ru' => 'Russian',
+        'ry' => 'Romany',
         'sa' => 'Sanskrit',
         'sc' => 'Sardinian',
         'sd' => 'Sindhi',
@@ -807,6 +815,7 @@ class AudioLanguageDictionaries
         'sw' => 'Swahili',
         'ss' => 'Swasi',
         'sv' => 'Swedish',
+        'sz' => 'Swiss German',
         'ta' => 'Tamil',
         'te' => 'Telugu',
         'tg' => 'Tajik',
