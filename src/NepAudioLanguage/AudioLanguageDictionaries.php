@@ -878,4 +878,14 @@ class AudioLanguageDictionaries
             return $this->key_default;
         }
     }
+    
+    public function listIsoDashThree()
+    {
+        $list =  [];
+        foreach ($this->nameFromKey as $key => $value)
+        {
+            $list[$value] = array_search($key, $this->key_iso_639_3);
+        }
+        return $list;
+    }
 }
