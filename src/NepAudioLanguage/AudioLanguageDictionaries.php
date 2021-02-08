@@ -104,7 +104,7 @@ class AudioLanguageDictionaries
         'gf' => 'guf',
         'pf' => 'pyf',
         'tf' => 'atf',
-        'ga' => 'gab',
+        'ga' => 'gle',
         'gm' => 'gmb',
         'ge' => 'geo',
         'de' => 'deu',
@@ -878,7 +878,7 @@ class AudioLanguageDictionaries
             return $this->key_default;
         }
     }
-    
+
     public function listIsoDashThree()
     {
         $list =  [];
