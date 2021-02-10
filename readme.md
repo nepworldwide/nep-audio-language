@@ -29,6 +29,7 @@ composer require nepworldwide/nep-audio-language
 use NepAudioLanguage\AudioLanguage;
 
 // $code could be any ISO 639-1, ISO 639-2 or ISO 639-3 code
+// ISO 639-2 might not be 100% for both the B and T range 
 // unsupported will return as Undetermined
 // if the input is the name like in the example below shoul be avoided 
 // as the chance of error is high
