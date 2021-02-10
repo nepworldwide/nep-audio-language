@@ -1,11 +1,9 @@
 <?php
 
 
-class LanguageTest
-{
+use NepAudioLanguage\AudioLanguage;
+use NepAudioLanguage\AudioLanguageDictionaries;
 
-    use NepAudioLanguage\AudioLanguage;
-    use NepAudioLanguage\AudioLanguageDictionaries;
 
 class LanguageTest extends TestCase
 {
