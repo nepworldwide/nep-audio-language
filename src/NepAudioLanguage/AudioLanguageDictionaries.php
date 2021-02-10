@@ -959,4 +959,9 @@ class AudioLanguageDictionaries
         }
         return $list;
     }
+
+    public function listIsoDashOne()
+    {
+        return array_flip($this->nameFromKey);
+    }
 }
