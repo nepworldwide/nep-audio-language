@@ -49,4 +49,14 @@ class LanguageTest extends TestCase
             $this->assertEquals($code, $language->iso_639_3);
         }
     }
+
+    public function testConsistencyInAudioLanguageFromDashOne()
+    {
+        $dict = new AudioLanguageDictionaries();
+        $languageList = $dict->listIsoDashOne();
+        foreach ($languageList as $listedLanguage  => $code )  {
+            $language = new AudioLanguage($code);
+            $this->assertEquals($code, $language->iso_639_1);
+        }
+    }
 }
