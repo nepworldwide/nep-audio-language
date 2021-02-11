@@ -3,41 +3,41 @@
 
 use NepAudioLanguage\AudioLanguage;
 use NepAudioLanguage\AudioLanguageDictionaries;
+use PHPUnit\Framework\TestCase;
 
 
 class LanguageTest extends TestCase
 {
     public function testShouldReturnLanguageList()
     {
-        $this->get("language", []);
-        $this->seeStatusCode(200);
+        $dictionary = new AudioLanguageDictionaries();
+        $list = $dictionary->listIsoDashThree();
+        $this->assertIsArray($list);
     }
 
     public function testShouldReturnLanguage()
     {
-        $this->get("language/eng", []);
-        $this->seeStatusCode(200);
-        $this->seeJsonStructure([
-            'name',
-            'iso_639_1',
-            'iso_639_3'
-        ]);
+        $result = [
+            "name"=> "English",
+            "iso_639_1"=> "en",
+            "iso_639_3"=> "eng"
+        ];
+        $language = new AudioLanguage('eng');
+        $this->assertJson(json_encode($language));
+        $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
+
     }
 
     public function testShouldReturnDefaultLanguage()
     {
-        $this->get("language/qpr", []);
-        $this->seeStatusCode(200);
-        $this->seeJsonStructure([
-            'name',
-            'iso_639_1',
-            'iso_639_3'
-        ]);
-        $this->seeJsonEquals([
+        $result = [
             "name" => "Undetermined",
             "iso_639_1" => "ud",
             "iso_639_3" => "und"
-        ]);
+        ];
+        $language = new AudioLanguage('opr');
+        $this->assertJson(json_encode($language));
+        $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
     }
 
     public function testConsistencyInAudioLanguageDictionary()
