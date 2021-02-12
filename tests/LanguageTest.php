@@ -31,6 +31,25 @@ class LanguageTest extends TestCase
         $this->assertEquals('en', $resolved);
     }
 
+    public function testKeyDefault()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertEquals('ud', $dictionary->key_default);
+        $this->assertNotEquals('uu', $dictionary->key_default);
+    }
+
+    public function testDictDashThree()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertIsArray($dictionary->key_iso_639_3);
+    }
+
+    public function testDictDashTwo()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertIsArray($dictionary->key_iso_639_2_B);
+    }
+
     public function testShouldReturnLanguage()
     {
         $result = [
