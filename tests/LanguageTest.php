@@ -8,11 +8,27 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageTest extends TestCase
 {
-    public function testShouldReturnLanguageList()
+    public function testShouldReturnLanguageListOfIsoDashThree()
     {
         $dictionary = new AudioLanguageDictionaries();
+        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
         $list = $dictionary->listIsoDashThree();
         $this->assertIsArray($list);
+    }
+
+    public function testShouldReturnLanguageListOfIsoDashOne()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
+        $list = $dictionary->listIsoDashOne();
+        $this->assertIsArray($list);
+    }
+
+    public function testResolveTwoCharCode()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('en');
+        $this->assertEquals('en', $resolved);
     }
 
     public function testShouldReturnLanguage()
