@@ -44,6 +44,27 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertEquals('en', $resolved);
     }
 
+    public function testResolveThreeCharCode()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('eng');
+        $this->assertEquals('en', $resolved);
+    }
+
+    public function testResolveName()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('English');
+        $this->assertEquals('en', $resolved);
+    }
+
+    public function testResolveDefaults()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('Polsk');
+        $this->assertEquals('ud', $resolved);
+    }
+
     public function testKeyDefault()
     {
         $dictionary = new AudioLanguageDictionaries();
