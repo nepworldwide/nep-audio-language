@@ -55,7 +55,13 @@ class LanguageTest extends TestCase
         $dictionary = new AudioLanguageDictionaries();
         $this->assertIsArray($dictionary->key_iso_639_1);
     }
-    
+
+    public function testDictNameFromKey()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertIsArray($dictionary->nameFromKey);
+    }
+
     public function testShouldReturnLanguage()
     {
         $result = [
