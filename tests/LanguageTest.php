@@ -8,12 +8,25 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageTest extends TestCase
 {
+    public function lister()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $dictionary->nameFromKey;
+        $dictionary->key_iso_639_1;
+        $dictionary->key_iso_639_2_B;
+        $dictionary->key_iso_639_3;
+        $dictionary->listIsoDashOne();
+        $dictionary->listIsoDashThree();
+        $dictionary->resolve();
+    }
     public function testShouldReturnLanguageListOfIsoDashThree()
     {
         $dictionary = new AudioLanguageDictionaries();
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
         $list = $dictionary->listIsoDashThree();
         $this->assertIsArray($list);
+        $this->assertArrayHasKey('English', $list);
+        $this->assertArrayNotHasKey('Engelsk', $list);
     }
 
     public function testShouldReturnLanguageListOfIsoDashOne()
@@ -22,6 +35,8 @@ class LanguageTest extends TestCase
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
         $list = $dictionary->listIsoDashOne();
         $this->assertIsArray($list);
+        $this->assertArrayHasKey('English', $list);
+        $this->assertArrayNotHasKey('Engelsk', $list);
     }
 
     public function testResolveTwoCharCode()
@@ -42,6 +57,7 @@ class LanguageTest extends TestCase
     {
         $dictionary = new AudioLanguageDictionaries();
         $this->assertIsArray($dictionary->key_iso_639_3);
+
     }
 
     public function testDictDashTwo()
