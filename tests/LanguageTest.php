@@ -16,7 +16,6 @@ class LanguageTest extends TestCase
             "iso_639_3"=> "eng"
         ];
         $language = new AudioLanguage('eng');
-        $language->
         $this->assertJson(json_encode($language));
         $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
 
