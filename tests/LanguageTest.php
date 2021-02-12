@@ -50,6 +50,12 @@ class LanguageTest extends TestCase
         $this->assertIsArray($dictionary->key_iso_639_2_B);
     }
 
+    public function testDictDashOne()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertIsArray($dictionary->key_iso_639_1);
+    }
+    
     public function testShouldReturnLanguage()
     {
         $result = [
