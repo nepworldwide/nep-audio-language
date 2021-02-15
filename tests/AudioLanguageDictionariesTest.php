@@ -68,18 +68,32 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertIsNotString($list);
     }
 
-    public function testResolveTwoCharCode()
+    public function testResolveTwoCharCodeSuccess()
     {
         $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('en');
         $this->assertEquals('en', $resolved);
     }
 
-    public function testResolveThreeCharCode()
+    public function testResolveTwoCharCodeFail()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('en');
+        $this->assertEquals('ud', $resolved);
+    }
+
+    public function testResolveThreeCharCodeSuccess()
     {
         $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('eng');
         $this->assertEquals('en', $resolved);
+    }
+
+    public function testResolveThreeCharCodeFail()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $resolved = $dictionary->resolve('eng');
+        $this->assertEquals('ud', $resolved);
     }
 
     public function testResolveName()
