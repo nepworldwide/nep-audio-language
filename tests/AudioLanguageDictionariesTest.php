@@ -78,11 +78,7 @@ class AudioLanguageDictionariesTest extends TestCase
     }
 
     /**
-     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_default
-     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_1
-     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_2_B
-     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_3
-     * @covers \NepAudioLanguage\AudioLanguageDictionaries::nameFromKey
+     * @coversNothing
      */
     public function testProperties()
     {

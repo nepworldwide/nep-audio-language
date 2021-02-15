@@ -11,37 +11,6 @@ class LanguageTest extends TestCase
     /**
      * @coversNothing
      */
-    public function testShouldReturnLanguage()
-    {
-        $result = [
-            "name"=> "English",
-            "iso_639_1"=> "en",
-            "iso_639_3"=> "eng"
-        ];
-        $language = new AudioLanguage('eng');
-        $this->assertJson(json_encode($language));
-        $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
-
-    }
-
-    /**
-     * @coversNothing
-     */
-    public function testShouldReturnDefaultLanguage()
-    {
-        $result = [
-            "name" => "Undetermined",
-            "iso_639_1" => "ud",
-            "iso_639_3" => "und"
-        ];
-        $language = new AudioLanguage('opr');
-        $this->assertJson(json_encode($language));
-        $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
-    }
-
-    /**
-     * @coversNothing
-     */
     public function testConsistencyInAudioLanguageDictionary()
     {
         $dict = new AudioLanguageDictionaries();
