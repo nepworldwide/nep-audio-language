@@ -16,7 +16,7 @@ class AudioLanguageDictionariesTest extends TestCase
      * $dictionary->listIsoDashThree();
      * $dictionary->resolve();
      */
-    
+
 
     /**
      * Test success $dictionary->listIsoDashThree();
@@ -110,35 +110,22 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertEquals('ud', $resolved);
     }
 
-    public function testKeyDefault()
+    public function testProperties()
     {
         $dictionary = new AudioLanguageDictionaries();
         $this->assertEquals('ud', $dictionary->key_default);
         $this->assertNotEquals('uu', $dictionary->key_default);
-    }
 
-    public function testDictDashThree()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $this->assertIsArray($dictionary->key_iso_639_3);
-
-    }
-
-    public function testDictDashTwo()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $this->assertIsArray($dictionary->key_iso_639_2_B);
-    }
-
-    public function testDictDashOne()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $this->assertIsArray($dictionary->key_iso_639_1);
-    }
+        $this->assertIsNotString($dictionary->key_iso_639_1);
 
-    public function testDictNameFromKey()
-    {
-        $dictionary = new AudioLanguageDictionaries();
+        $this->assertIsArray($dictionary->key_iso_639_2_B);
+        $this->assertIsNotString($dictionary->key_iso_639_2_B);
+
+        $this->assertIsArray($dictionary->key_iso_639_3);
+        $this->assertIsNotString($dictionary->key_iso_639_3);
+
         $this->assertIsArray($dictionary->nameFromKey);
+        $this->assertIsNotString($dictionary->nameFromKey);
     }
 }
