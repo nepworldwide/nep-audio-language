@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageTest extends TestCase
 {
+    /**
+     * @coversNothing
+     */
     public function testShouldReturnLanguage()
     {
         $result = [
@@ -21,6 +24,9 @@ class LanguageTest extends TestCase
 
     }
 
+    /**
+     * @coversNothing
+     */
     public function testShouldReturnDefaultLanguage()
     {
         $result = [
@@ -33,6 +39,9 @@ class LanguageTest extends TestCase
         $this->assertJsonStringEqualsJsonString(json_encode($result), json_encode($language));
     }
 
+    /**
+     * @coversNothing
+     */
     public function testConsistencyInAudioLanguageDictionary()
     {
         $dict = new AudioLanguageDictionaries();
@@ -42,7 +51,9 @@ class LanguageTest extends TestCase
             $this->assertEquals($code, $language->iso_639_3);
         }
     }
-
+    /**
+     * @coversNothing
+     */
     public function testConsistencyInAudioLanguageFromDashOne()
     {
         $dict = new AudioLanguageDictionaries();
