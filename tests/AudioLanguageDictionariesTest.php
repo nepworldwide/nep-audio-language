@@ -6,17 +6,17 @@ use PHPUnit\Framework\TestCase;
 
 class AudioLanguageDictionariesTest extends TestCase
 {
-    public function lister()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $dictionary->nameFromKey;
-        $dictionary->key_iso_639_1;
-        $dictionary->key_iso_639_2_B;
-        $dictionary->key_iso_639_3;
-        $dictionary->listIsoDashOne();
-        $dictionary->listIsoDashThree();
-        $dictionary->resolve();
-    }
+    /**
+     * $dictionary = new AudioLanguageDictionaries();
+     * $dictionary->nameFromKey;
+     * $dictionary->key_iso_639_1;
+     * $dictionary->key_iso_639_2_B;
+     * $dictionary->key_iso_639_3;
+     * $dictionary->listIsoDashOne();
+     * $dictionary->listIsoDashThree();
+     * $dictionary->resolve();
+     */
+    
 
     /**
      * Test success $dictionary->listIsoDashThree();
