@@ -9,7 +9,7 @@
     "require-dev": {
         "php": "^7.2",
         "ext-json": "*",
-        "phpunit/phpunit": "9.5.x-dev"
+        "phpunit/phpunit": "7.5.20"
     },
     "license": "MIT",
     "authors": [

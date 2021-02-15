@@ -17,7 +17,11 @@ class AudioLanguageDictionariesTest extends TestCase
         $dictionary->listIsoDashThree();
         $dictionary->resolve();
     }
-    public function testShouldReturnLanguageListOfIsoDashThree()
+
+    /**
+     * Test success $dictionary->listIsoDashThree();
+     */
+    public function testShouldReturnLanguageListOfIsoDashThreeSuccess()
     {
         $dictionary = new AudioLanguageDictionaries();
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
@@ -27,7 +31,22 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertArrayNotHasKey('Engelsk', $list);
     }
 
-    public function testShouldReturnLanguageListOfIsoDashOne()
+    /**
+     * Test fails $dictionary->listIsoDashThree();
+     */
+    public function testShouldReturnLanguageListOfIsoDashThreeFail()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
+        $list = $dictionary->listIsoDashThree();
+        $this->assertIsNotObject($list);
+        $this->assertIsNotString($list);
+    }
+
+    /**
+     * Test success $dictionary->listIsoDashOne();
+     */
+    public function testShouldReturnLanguageListOfIsoDashOneSuccess()
     {
         $dictionary = new AudioLanguageDictionaries();
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
@@ -35,6 +54,18 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertIsArray($list);
         $this->assertArrayHasKey('English', $list);
         $this->assertArrayNotHasKey('Engelsk', $list);
+    }
+
+    /**
+     * Test fails $dictionary->listIsoDashOne();
+     */
+    public function testShouldReturnLanguageListOfIsoDashOneFails()
+    {
+        $dictionary = new AudioLanguageDictionaries();
+        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
+        $list = $dictionary->listIsoDashOne();
+        $this->assertIsNotObject($list);
+        $this->assertIsNotString($list);
     }
 
     public function testResolveTwoCharCode()
