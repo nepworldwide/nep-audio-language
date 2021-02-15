@@ -19,7 +19,8 @@ class AudioLanguageDictionariesTest extends TestCase
 
 
     /**
-     * Test success $dictionary->listIsoDashThree();
+     * Test $dictionary->listIsoDashThree();
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::listIsoDashThree
      */
     public function testShouldReturnLanguageListOfIsoDashThreeSuccess()
     {
@@ -27,24 +28,16 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
         $list = $dictionary->listIsoDashThree();
         $this->assertIsArray($list);
-        $this->assertArrayHasKey('English', $list);
-        $this->assertArrayNotHasKey('Engelsk', $list);
-    }
-
-    /**
-     * Test fails $dictionary->listIsoDashThree();
-     */
-    public function testShouldReturnLanguageListOfIsoDashThreeFail()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
-        $list = $dictionary->listIsoDashThree();
         $this->assertIsNotObject($list);
         $this->assertIsNotString($list);
+        $this->assertArrayHasKey('English', $list);
+        $this->assertArrayNotHasKey('Engelsk', $list);
+
     }
 
     /**
-     * Test success $dictionary->listIsoDashOne();
+     * Test $dictionary->listIsoDashOne();
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::listIsoDashOne
      */
     public function testShouldReturnLanguageListOfIsoDashOneSuccess()
     {
@@ -52,64 +45,45 @@ class AudioLanguageDictionariesTest extends TestCase
         $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
         $list = $dictionary->listIsoDashOne();
         $this->assertIsArray($list);
+        $this->assertIsNotObject($list);
+        $this->assertIsNotString($list);
         $this->assertArrayHasKey('English', $list);
         $this->assertArrayNotHasKey('Engelsk', $list);
     }
 
     /**
-     * Test fails $dictionary->listIsoDashOne();
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::resolve
      */
-    public function testShouldReturnLanguageListOfIsoDashOneFails()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $this->assertInstanceOf('NepAudioLanguage\AudioLanguageDictionaries', $dictionary);
-        $list = $dictionary->listIsoDashOne();
-        $this->assertIsNotObject($list);
-        $this->assertIsNotString($list);
-    }
-
     public function testResolveTwoCharCodeSuccess()
     {
         $dictionary = new AudioLanguageDictionaries();
+
         $resolved = $dictionary->resolve('en');
         $this->assertEquals('en', $resolved);
-    }
 
-    public function testResolveTwoCharCodeFail()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('yy');
         $this->assertEquals('ud', $resolved);
-    }
 
-    public function testResolveThreeCharCodeSuccess()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('eng');
         $this->assertEquals('en', $resolved);
-    }
 
-    public function testResolveThreeCharCodeFail()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('yyx');
         $this->assertEquals('ud', $resolved);
-    }
 
-    public function testResolveName()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('English');
         $this->assertEquals('en', $resolved);
-    }
 
-    public function testResolveDefaults()
-    {
-        $dictionary = new AudioLanguageDictionaries();
         $resolved = $dictionary->resolve('Polsk');
         $this->assertEquals('ud', $resolved);
     }
 
+    /**
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_default
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_1
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_2_B
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::key_iso_639_3
+     * @covers \NepAudioLanguage\AudioLanguageDictionaries::nameFromKey
+     */
     public function testProperties()
     {
         $dictionary = new AudioLanguageDictionaries();
