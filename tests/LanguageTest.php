@@ -8,13 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageTest extends TestCase
 {
-    public function testShouldReturnLanguageList()
-    {
-        $dictionary = new AudioLanguageDictionaries();
-        $list = $dictionary->listIsoDashThree();
-        $this->assertIsArray($list);
-    }
-
     public function testShouldReturnLanguage()
     {
         $result = [
