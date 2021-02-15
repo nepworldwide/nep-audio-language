@@ -78,7 +78,7 @@ class AudioLanguageDictionariesTest extends TestCase
     public function testResolveTwoCharCodeFail()
     {
         $dictionary = new AudioLanguageDictionaries();
-        $resolved = $dictionary->resolve('en');
+        $resolved = $dictionary->resolve('yy');
         $this->assertEquals('ud', $resolved);
     }
 
@@ -92,7 +92,7 @@ class AudioLanguageDictionariesTest extends TestCase
     public function testResolveThreeCharCodeFail()
     {
         $dictionary = new AudioLanguageDictionaries();
-        $resolved = $dictionary->resolve('eng');
+        $resolved = $dictionary->resolve('yyx');
         $this->assertEquals('ud', $resolved);
     }
 
