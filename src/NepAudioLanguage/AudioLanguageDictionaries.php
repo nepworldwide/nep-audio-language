@@ -918,7 +918,7 @@ class AudioLanguageDictionaries
         'yo' => 'Yoruba',
         'za' => 'Zhuang',
         'zu' => 'Zulu',
-        'zx' => 'No linguistic content',
+        'zx' => 'Non-linguistic content',
         'ud' => 'Undetermined'
     ];
 
