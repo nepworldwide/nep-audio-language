@@ -3,13 +3,12 @@
     "description": "For generating audio objects",
     "type": "library",
     "require": {
-        "php": "^7.2",
+        "php": "^7.4 || ^8.0 || ^8.1",
         "ext-json": "*"
     },
     "require-dev": {
-        "php": "^7.2",
         "ext-json": "*",
-        "phpunit/phpunit": "7.5.20"
+        "phpunit/phpunit": "^9.0"
     },
     "license": "MIT",
     "authors": [
