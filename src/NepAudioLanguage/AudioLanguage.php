@@ -67,6 +67,7 @@ class AudioLanguage implements JsonSerializable
         return $this->iso_639_3;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [
